@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Maham Techworld
 
-## Getting Started
+Premium personal-brand website for **Maham Shakeel** - AI Engineer, Tech Influencer, and Tech Content Creator based in Dubai.
 
-First, run the development server:
+**Live domain:** https://mahamshakeel.tech
+
+## Stack
+
+- Next.js 16
+- TypeScript
+- Tailwind CSS v4
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Content editing
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+All site copy and lists live under `src/content/`:
 
-## Learn More
+| File | Purpose |
+|------|---------|
+| `site.ts` | Brand, SEO, nav, social, media kit path |
+| `hero.ts` | Hero copy + credibility strip |
+| `about.ts` | About, What I Do, Where I'm Headed |
+| `portfolio.ts` | Portfolio items + filters |
+| `brands.ts` | 12 confirmed brands + case studies |
+| `metrics.ts` | Media Kit stats + Collabstr reviews |
+| `press.ts` | Press entries (empty until verified) |
+| `skills.ts` | Skills, services, contact intro |
 
-To learn more about Next.js, take a look at the following resources:
+Add verified Instagram/YouTube URLs to `portfolio.ts` (`embedUrl` / `externalUrl`) when available. Never invent URLs.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Assets
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Drop the official Media Kit PDF at `public/media/maham-techworld-media-kit.pdf`
+2. Add real photographs to `public/images/hero/` and `public/images/about/`
+3. Optional brand logos in `public/images/brands/`
 
-## Deploy on Vercel
+## Contact form
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Set environment variables from `.env.example`:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `RESEND_API_KEY` - required in production
+- `CONTACT_TO_EMAIL` - defaults to mahamshakeel546@gmail.com
+- `CONTACT_FROM_EMAIL` - verified Resend sender
+
+In development without a key, submissions are logged server-side.
+
+## Deploy
+
+Deploy to Vercel (or similar), set the production domain to `mahamshakeel.tech`, and configure HTTPS + DNS.
