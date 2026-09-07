@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { siteConfig } from "@/content/site";
 import { SocialLinks } from "@/components/ui/SocialLinks";
 
@@ -53,12 +54,25 @@ export function Footer() {
 
         <div className="mt-14 grid gap-12 lg:grid-cols-[1.35fr_0.9fr_0.9fr] lg:gap-10">
           <div>
-            <p className="brand-mark text-[clamp(2.2rem,4.2vw,3rem)] text-ink">
-              {siteConfig.brand}
-            </p>
-            <p className="brand-mark__name mt-2 text-[0.72rem] text-muted">
-              {siteConfig.name}
-            </p>
+            <div className="flex items-center gap-3">
+              <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full shadow-[0_10px_24px_rgba(20,24,31,0.12)] ring-1 ring-border/70">
+                <Image
+                  src={siteConfig.logo}
+                  alt={`${siteConfig.brand} logo`}
+                  fill
+                  sizes="48px"
+                  className="object-cover"
+                />
+              </span>
+              <div>
+                <p className="brand-mark text-[clamp(1.8rem,3.5vw,2.4rem)] text-ink">
+                  {siteConfig.brand}
+                </p>
+                <p className="brand-mark__name mt-1 text-[0.72rem] text-muted">
+                  {siteConfig.name}
+                </p>
+              </div>
+            </div>
             <p className="mt-5 max-w-md text-[1.05rem] leading-relaxed text-muted">
               {siteConfig.positioning}
             </p>

@@ -61,6 +61,13 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  icons: {
+    icon: [
+      { url: "/favicon.png", type: "image/png" },
+      { url: "/icons/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: [{ url: "/apple-icon.png", type: "image/png" }],
+  },
   authors: [{ name: siteConfig.name, url: siteConfig.url }],
   creator: siteConfig.name,
   keywords: [
