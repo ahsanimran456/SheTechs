@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { navLinks, siteConfig } from "@/content/site";
 import { cn } from "@/lib/cn";
@@ -64,11 +65,18 @@ export function Navbar() {
 
         <Link
           href="#home"
-          className="group relative z-[1] flex min-w-0 items-center gap-2.5 pl-1"
+          className="group relative z-[1] flex min-w-0 items-center gap-2.5 pl-0.5"
           onClick={() => setOpen(false)}
         >
-          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-ink font-[family-name:var(--font-brand)] text-[0.78rem] font-bold tracking-[-0.04em] text-[#f8f6f2] shadow-[0_8px_18px_rgba(20,24,31,0.18)] transition duration-300 group-hover:bg-accent-deep sm:h-10 sm:w-10 sm:text-[0.85rem]">
-            MT
+          <span className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full shadow-[0_8px_18px_rgba(20,24,31,0.16)] ring-1 ring-border/60 transition duration-300 group-hover:ring-accent/40 sm:h-11 sm:w-11">
+            <Image
+              src={siteConfig.logo}
+              alt={`${siteConfig.brand} logo`}
+              fill
+              sizes="44px"
+              className="object-cover"
+              priority
+            />
           </span>
           <span className="min-w-0">
             <span className="brand-mark block truncate text-[1.05rem] text-ink sm:text-[1.2rem]">

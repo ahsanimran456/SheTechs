@@ -8,6 +8,7 @@ export const siteConfig = {
   email: "mahamshakeel546@gmail.com",
   location: "Dubai, UAE",
   positioning: "AI Engineer · Tech Influencer · Tech Content Creator · Dubai, UAE",
+  logo: "/images/brand/maham-techworld-logo.png",
   ogImage: "/opengraph-image",
 } as const;
 
