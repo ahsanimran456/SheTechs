@@ -39,7 +39,7 @@ export function About() {
             <p className="eyebrow">About</p>
             <h2
               id="about-heading"
-              className="display mt-3 text-[clamp(2rem,4vw,3.2rem)]"
+              className="display section-heading mt-3"
             >
               {title}
             </h2>
@@ -85,7 +85,7 @@ export function About() {
             </div>
 
             <div className="mt-10 rounded-[1.75rem] border border-border bg-[linear-gradient(135deg,rgba(31,107,102,0.08),transparent_55%),var(--bg-elevated)] p-7 md:p-8">
-              <h3 className="font-[family-name:var(--font-display)] text-2xl tracking-[-0.03em]">
+              <h3 className="font-[family-name:var(--font-display)] text-[1.65rem] tracking-[-0.03em] md:text-2xl">
                 <HoverSelectText as="span">{whatIDo.title}</HoverSelectText>
               </h3>
               <ul className="mt-5 space-y-4">

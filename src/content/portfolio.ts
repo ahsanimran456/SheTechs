@@ -39,7 +39,7 @@ export const portfolioItems: PortfolioItem[] = [
     id: "ig-brain-ai",
     title: "Your brain is still your most powerful tool",
     description:
-      "Don’t outsource every thought to AI - a reminder to keep human judgment in the loop.",
+      "A reminder to keep human judgment at the center - even when AI tools are powerful.",
     category: "AI Education",
     platform: "Instagram",
     thumbnail: "/images/work/ig-brain-ai.jpg",
@@ -50,7 +50,7 @@ export const portfolioItems: PortfolioItem[] = [
     id: "ig-falcon-uae",
     title: "UAE’s AI ecosystem & Falcon AI",
     description:
-      "While the world talks about OpenAI, Google & Meta - the UAE has been quietly building its own AI stack.",
+      "While global platforms lead the conversation, the UAE continues to develop its own AI capabilities - including Falcon AI.",
     category: "UAE & Local Tech",
     platform: "Instagram",
     thumbnail: "/images/work/ig-falcon-uae.jpg",
@@ -70,9 +70,9 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: "ig-unsent",
-    title: "Unsent - never know what to reply?",
+    title: "Unsent - smarter replies for messaging",
     description:
-      "Brand campaign for Unsent - AI that redefines your texts and suggests the best reply.",
+      "Brand campaign for Unsent - AI that refines your texts and suggests stronger replies.",
     category: "Brand Campaigns",
     platform: "Instagram",
     brand: "Unsent App",
@@ -82,9 +82,9 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: "ig-cv-freshers",
-    title: "Freshers - make your CV stand out",
+    title: "Stand out as a fresher - strengthen your CV with AI",
     description:
-      "Practical AI course and career tips for freshers building a stronger CV.",
+      "Practical AI learning and career guidance for early-career professionals building a stronger CV.",
     category: "AI Education",
     platform: "Instagram",
     thumbnail: "/images/work/ig-cv-freshers.jpg",
@@ -97,7 +97,7 @@ export const portfolioItems: PortfolioItem[] = [
     id: "openbuilder",
     title: "OpenBuilder.ai",
     description:
-      "This app literally made me stop using ChatGPT - one prompt to fully functional frontend + backend.",
+      "Product showcase for OpenBuilder.ai - turn a single prompt into a functional frontend and backend workflow.",
     category: "Brand Campaigns",
     platform: "Instagram",
     brand: "OpenBuilder.ai",
@@ -123,7 +123,7 @@ export const portfolioItems: PortfolioItem[] = [
     id: "audioreadplay",
     title: "AudioReadPlay",
     description:
-      "Productivity hack - turn long articles and study notes into audio for busy days.",
+      "Productivity feature highlight - convert long articles and study notes into audio for on-the-go learning.",
     category: "Brand Campaigns",
     platform: "Instagram",
     brand: "Audio Read",
@@ -170,7 +170,7 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: "yt-gen-vs-reg",
-    title: "Generative AI vs Regular AI - What’s the REAL Difference?",
+    title: "Generative AI vs Traditional AI - Key Differences",
     description: "Clear breakdown of generative vs traditional AI.",
     category: "Tech Facts",
     platform: "YouTube",

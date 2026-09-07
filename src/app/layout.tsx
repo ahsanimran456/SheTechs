@@ -1,15 +1,22 @@
 import type { Metadata } from "next";
-import { Outfit, Source_Sans_3 } from "next/font/google";
+import { Bricolage_Grotesque, Source_Sans_3, Syne } from "next/font/google";
 import { siteConfig } from "@/content/site";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { CursorAura } from "@/components/ui/CursorAura";
 import "./globals.css";
 
-const display = Outfit({
+const display = Bricolage_Grotesque({
   variable: "--font-display",
   subsets: ["latin"],
   display: "swap",
+});
+
+const brand = Syne({
+  variable: "--font-brand",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["500", "600", "700", "800"],
 });
 
 const body = Source_Sans_3({
@@ -105,7 +112,10 @@ const websiteJsonLd = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable} h-full`}>
+    <html
+      lang="en"
+      className={`${display.variable} ${brand.variable} ${body.variable} h-full`}
+    >
       <body className="min-h-full antialiased">
         <script
           type="application/ld+json"

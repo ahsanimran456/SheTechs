@@ -1,67 +1,120 @@
-import { skills, services } from "@/content/skills";
+"use client";
 
-function MarkerList({
-  items,
-  tone = "light",
-}: {
-  items: readonly string[];
-  tone?: "light" | "dark";
-}) {
-  return (
-    <ul className="mt-6 space-y-4">
-      {items.map((item) => (
-        <li key={item} className="flex items-start gap-4">
-          <span
-            className={
-              tone === "dark"
-                ? "mt-1 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/10 text-sm"
-                : "mt-1 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent-soft text-sm text-accent-deep"
-            }
-            aria-hidden="true"
-          >
-            ◆
-          </span>
-          <span
-            className={
-              tone === "dark"
-                ? "pt-1.5 text-[1.05rem] text-[#ddd7cd]"
-                : "pt-1.5 text-[1.05rem] text-ink/85"
-            }
-          >
-            {item}
-          </span>
-        </li>
-      ))}
-    </ul>
-  );
-}
+import { skills, services } from "@/content/skills";
+import { HoverSelectText } from "@/components/ui/HoverSelectText";
+import { Reveal } from "@/components/ui/Reveal";
+import { TiltCard } from "@/components/ui/TiltCard";
 
 export function SkillsServices() {
   return (
-    <section id="skills" className="section-pad" aria-labelledby="skills-heading">
-      <div className="container-site">
+    <section
+      id="skills"
+      className="section-pad relative overflow-hidden"
+      aria-labelledby="skills-heading"
+    >
+      <div
+        className="pointer-events-none absolute -left-20 top-16 h-72 w-72 rounded-full bg-accent-soft/45 blur-3xl"
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute -right-16 bottom-10 h-64 w-64 rounded-full bg-[rgba(20,24,31,0.04)] blur-3xl"
+        aria-hidden="true"
+      />
+
+      <div className="container-site relative">
         <div className="max-w-2xl">
           <p className="eyebrow">Capabilities</p>
           <h2
             id="skills-heading"
-            className="display mt-3 text-[clamp(2rem,4vw,3.2rem)]"
+            className="display section-heading mt-3"
           >
             Skills &amp; Services
           </h2>
+          <p className="mt-4 text-[1.1rem] leading-relaxed text-muted">
+            <HoverSelectText as="span">
+              Technical fluency meets on-camera storytelling - so brands get
+              content that is clear, credible, and built to perform.
+            </HoverSelectText>
+          </p>
         </div>
 
-        <div className="mt-10 grid gap-5 lg:grid-cols-2">
-          <div className="rounded-[1.75rem] border border-border bg-elevated/80 p-7 md:p-8">
-            <h3 className="font-[family-name:var(--font-display)] text-2xl tracking-[-0.03em]">
-              Skills
-            </h3>
-            <MarkerList items={skills} />
+        <div className="mt-12 grid gap-8 lg:grid-cols-2 lg:gap-10">
+          <div>
+            <div className="mb-6 flex items-end justify-between gap-4">
+              <div>
+                <p className="eyebrow">Toolkit</p>
+                <h3 className="subheading mt-2">
+                  Skills
+                </h3>
+              </div>
+              <span className="rounded-full border border-border bg-elevated/90 px-3 py-1 text-xs tracking-[0.08em] text-muted uppercase">
+                {skills.length} strengths
+              </span>
+            </div>
+
+            <ul className="space-y-4">
+              {skills.map((skill, index) => (
+                <li key={skill}>
+                  <Reveal delay={index * 55}>
+                    <TiltCard className="rounded-[1.45rem]" maxTilt={4} glare>
+                      <article className="group relative overflow-hidden rounded-[1.45rem] border border-border/80 bg-[linear-gradient(165deg,#fffcf8,#f5f2ec)] px-5 py-5 shadow-[0_12px_32px_rgba(20,24,31,0.05)] transition duration-300 hover:-translate-y-1 hover:border-accent/35 hover:shadow-[0_22px_44px_rgba(20,24,31,0.1)] md:px-6">
+                        <div className="proof-card__shine" aria-hidden="true" />
+                        <div className="relative flex items-start gap-4">
+                          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-accent-soft font-[family-name:var(--font-display)] text-sm tabular-nums text-accent-deep">
+                            {String(index + 1).padStart(2, "0")}
+                          </span>
+                          <div className="min-w-0 pt-1.5">
+                            <p className="eyebrow">Capability</p>
+                            <p className="mt-1.5 text-[1.12rem] leading-snug text-ink md:text-[1.2rem]">
+                              {skill}
+                            </p>
+                          </div>
+                        </div>
+                      </article>
+                    </TiltCard>
+                  </Reveal>
+                </li>
+              ))}
+            </ul>
           </div>
-          <div className="rounded-[1.75rem] bg-ink p-7 text-[#f6f3ee] md:p-8">
-            <h3 className="font-[family-name:var(--font-display)] text-2xl tracking-[-0.03em]">
-              Services
-            </h3>
-            <MarkerList items={services} tone="dark" />
+
+          <div>
+            <div className="mb-6 flex items-end justify-between gap-4">
+              <div>
+                <p className="eyebrow">Offer</p>
+                <h3 className="subheading mt-2">
+                  Services
+                </h3>
+              </div>
+              <span className="rounded-full border border-accent/25 bg-accent-soft/70 px-3 py-1 text-xs tracking-[0.08em] text-accent-deep uppercase">
+                {services.length} ways to work
+              </span>
+            </div>
+
+            <ul className="space-y-4">
+              {services.map((service, index) => (
+                <li key={service}>
+                  <Reveal delay={index * 55 + 40}>
+                    <TiltCard className="rounded-[1.45rem]" maxTilt={4} glare>
+                      <article className="group relative overflow-hidden rounded-[1.45rem] border border-accent/20 bg-[linear-gradient(145deg,rgba(31,107,102,0.12),transparent_50%),#fffcf8] px-5 py-5 shadow-[0_12px_32px_rgba(20,24,31,0.05)] transition duration-300 hover:-translate-y-1 hover:border-accent/45 hover:shadow-[0_22px_44px_rgba(31,107,102,0.14)] md:px-6">
+                        <div className="proof-card__shine" aria-hidden="true" />
+                        <div className="relative flex items-start gap-4">
+                          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-ink font-[family-name:var(--font-display)] text-sm tabular-nums text-[#f6f3ee]">
+                            {String(index + 1).padStart(2, "0")}
+                          </span>
+                          <div className="min-w-0 pt-1.5">
+                            <p className="eyebrow">Service</p>
+                            <p className="mt-1.5 text-[1.12rem] leading-snug text-ink md:text-[1.2rem]">
+                              {service}
+                            </p>
+                          </div>
+                        </div>
+                      </article>
+                    </TiltCard>
+                  </Reveal>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

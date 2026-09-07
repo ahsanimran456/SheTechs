@@ -1,7 +1,7 @@
 export const heroContent = {
   headline: "Hi, I'm Maham - I make AI and tech make sense.",
   supporting:
-    "Tech content creator based in Dubai. I've spent the last 3 years turning AI, automation and everyday tech into videos people actually watch and understand - while working full-time in AI-driven operations myself.",
+    "Tech content creator based in Dubai. For the past three years, I have turned AI, automation, and everyday technology into clear, engaging video content - while working full-time in AI-driven operations.",
   introduction: "AI Engineer · Tech Influencer · Dubai, UAE",
   image: {
     src: "/images/person.png",
@@ -10,7 +10,6 @@ export const heroContent = {
   ctas: {
     primary: { label: "Watch My Work", href: "#work" },
     secondary: { label: "Work With Me", href: "#contact" },
-    tertiary: { label: "Download Media Kit", href: "media-kit" as const },
   },
   credibility: [
     { value: "2.7K+", label: "Instagram followers" },

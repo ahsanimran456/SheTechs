@@ -225,14 +225,14 @@ export function Portfolio() {
           <p className="eyebrow">Portfolio</p>
           <h2
             id="work-heading"
-            className="display mt-3 text-[clamp(2rem,4vw,3.2rem)]"
+            className="display section-heading mt-3"
           >
             My Work
           </h2>
           <p className="mt-4 text-muted">
             <HoverSelectText as="span">
               Selected reels and Shorts on AI, productivity, and everyday tech -
-              made to explain ideas clearly, not just chase trends.
+              created to explain ideas clearly and support brand storytelling.
             </HoverSelectText>
           </p>
         </div>

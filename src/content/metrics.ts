@@ -27,7 +27,7 @@ export const metrics = [
   {
     id: "reel-avg",
     value: "3K–4K",
-    label: "Typical reel average (media kit band)",
+    label: "Typical reel average",
     numeric: 3500,
   },
   {
@@ -54,7 +54,7 @@ export const reviews = {
   source: "Collabstr",
   sourceUrl: "https://collabstr.com/mahamtechworld",
   profileStrength: "100% Good",
-  reviewCount: 4,
+  reviewCount: 3,
   scores: [
     { label: "Communication", value: 5 },
     { label: "Timeliness", value: 5 },
@@ -72,12 +72,6 @@ export const reviews = {
       rating: 5.0,
       date: "January 2026",
       text: "OpenBuilder left a 5.0 star review.",
-    },
-    {
-      brand: "MirrorMirror",
-      rating: 5.0,
-      date: "September 2025",
-      text: "MirrorMirror left a 5.0 star review.",
     },
     {
       brand: "Jeton",

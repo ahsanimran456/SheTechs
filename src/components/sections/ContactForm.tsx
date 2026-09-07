@@ -52,7 +52,8 @@ export function ContactForm() {
         if (data.errors) setErrors(data.errors);
         setStatus("error");
         setServerMessage(
-          data.message ?? "Something went wrong. Please try again or email directly.",
+          data.message ??
+            "Something went wrong. Please try again or email directly.",
         );
         return;
       }
@@ -71,10 +72,26 @@ export function ContactForm() {
   return (
     <form
       onSubmit={onSubmit}
-      className="relative rounded-[1.75rem] border border-border bg-elevated/90 p-6 shadow-[var(--shadow)] md:p-8"
+      className="relative overflow-hidden rounded-[1.85rem] border border-border/80 bg-[linear-gradient(165deg,#fffcf8_0%,#f4f1eb_100%)] p-7 shadow-[0_20px_50px_rgba(20,24,31,0.08)] md:p-9"
       noValidate
     >
-      <div className="grid gap-5">
+      <div
+        className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-accent-soft/50 blur-3xl"
+        aria-hidden="true"
+      />
+
+      <div className="relative">
+        <p className="eyebrow">Message</p>
+        <h3 className="subheading mt-2 text-ink">
+          Partnership inquiry
+        </h3>
+        <p className="mt-2 text-[1.02rem] leading-relaxed text-muted">
+          Share a brief overview of your campaign goals, timeline, and how you
+          found this page.
+        </p>
+      </div>
+
+      <div className="relative mt-8 grid gap-5 sm:grid-cols-2">
         <Field
           id="name"
           label="Name"
@@ -92,22 +109,26 @@ export function ContactForm() {
           error={errors.email}
           onChange={(value) => setForm((f) => ({ ...f, email: value }))}
         />
-        <Field
-          id="company"
-          label="Company"
-          value={form.company ?? ""}
-          error={errors.company}
-          onChange={(value) => setForm((f) => ({ ...f, company: value }))}
-        />
-        <Field
-          id="message"
-          label="Message"
-          required
-          multiline
-          value={form.message}
-          error={errors.message}
-          onChange={(value) => setForm((f) => ({ ...f, message: value }))}
-        />
+        <div className="sm:col-span-2">
+          <Field
+            id="company"
+            label="Company"
+            value={form.company ?? ""}
+            error={errors.company}
+            onChange={(value) => setForm((f) => ({ ...f, company: value }))}
+          />
+        </div>
+        <div className="sm:col-span-2">
+          <Field
+            id="message"
+            label="Message"
+            required
+            multiline
+            value={form.message}
+            error={errors.message}
+            onChange={(value) => setForm((f) => ({ ...f, message: value }))}
+          />
+        </div>
 
         {/* Honeypot - hidden from users */}
         <div className="absolute -left-[9999px] opacity-0" aria-hidden="true">
@@ -127,20 +148,20 @@ export function ContactForm() {
 
       <button
         type="submit"
-        className="btn btn-primary mt-6 w-full sm:w-auto"
+        className="btn btn-primary relative mt-7 w-full sm:w-auto"
         disabled={status === "loading"}
       >
         {status === "loading" ? "Sending…" : "Send message"}
       </button>
 
-      <div className="mt-4 min-h-[1.5rem]" aria-live="polite">
+      <div className="relative mt-4 min-h-[1.5rem]" aria-live="polite">
         {status === "success" ? (
-          <p className="text-sm text-accent-deep">
+          <p className="text-[0.95rem] text-accent-deep">
             Message sent. Maham will get back to you soon.
           </p>
         ) : null}
         {status === "error" ? (
-          <p className="text-sm text-red-700">{serverMessage}</p>
+          <p className="text-[0.95rem] text-red-700">{serverMessage}</p>
         ) : null}
       </div>
     </form>
@@ -168,15 +189,16 @@ function Field({
 }) {
   const describedBy = error ? `${id}-error` : undefined;
   const shared = cn(
-    "mt-2 w-full rounded-2xl border bg-white/70 px-4 py-3 text-sm outline-none transition",
+    "mt-2 w-full rounded-2xl border bg-white/85 px-4 py-3.5 text-[1.02rem] outline-none transition duration-200",
+    "shadow-[inset_0_1px_0_rgba(255,255,255,0.8)]",
     error
-      ? "border-red-400 focus:border-red-500"
-      : "border-border focus:border-accent",
+      ? "border-red-400 focus:border-red-500 focus:shadow-[0_0_0_4px_rgba(220,38,38,0.12)]"
+      : "border-border focus:border-accent focus:shadow-[0_0_0_4px_rgba(31,107,102,0.14)]",
   );
 
   return (
     <div>
-      <label htmlFor={id} className="text-sm font-medium text-ink">
+      <label htmlFor={id} className="text-[0.95rem] font-medium text-ink">
         {label}
         {required ? <span className="text-accent"> *</span> : null}
         {!required ? (
@@ -187,12 +209,13 @@ function Field({
         <textarea
           id={id}
           name={id}
-          rows={5}
+          rows={6}
           required={required}
           value={value}
           aria-invalid={Boolean(error)}
           aria-describedby={describedBy}
-          className={shared}
+          placeholder="Share your campaign goals, timeline, and partnership details…"
+          className={cn(shared, "min-h-[9rem] resize-y")}
           onChange={(e) => onChange(e.target.value)}
         />
       ) : (

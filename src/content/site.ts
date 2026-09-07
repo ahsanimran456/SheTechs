@@ -8,8 +8,6 @@ export const siteConfig = {
   email: "mahamshakeel546@gmail.com",
   location: "Dubai, UAE",
   positioning: "AI Engineer · Tech Influencer · Tech Content Creator · Dubai, UAE",
-  /** Official Media Kit (HTML) abstracted from the supplied kit. */
-  mediaKitPath: "/media-kit/index.html",
   ogImage: "/opengraph-image",
 } as const;
 
@@ -18,8 +16,8 @@ export const navLinks = [
   { href: "#about", label: "About" },
   { href: "#work", label: "My Work" },
   { href: "#brands", label: "Brands" },
-  { href: "#press", label: "Press & Recognition" },
-  { href: "#skills", label: "Skills & Services" },
+  { href: "#story", label: "Story" },
+  { href: "#skills", label: "Skills" },
   { href: "#contact", label: "Work With Me" },
 ] as const;
 

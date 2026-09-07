@@ -16,5 +16,5 @@ export const services = [
 export const contactContent = {
   title: "Work With Me",
   intro:
-    "Want to collaborate, book a campaign, or just say hi? Download my media kit below for audience details and rates, or reach out directly using the form.",
+    "Interested in collaborating or booking a campaign? Reach out directly using the form below, or email Maham to discuss partnership details.",
 } as const;

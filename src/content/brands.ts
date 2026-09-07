@@ -13,8 +13,7 @@ export type Brand = {
 
 /**
  * Confirmed brand collaborations.
- * Logos are local editable marks in /public/images/brands.
- * Websites verified as public brand destinations (2026).
+ * Logo images live in /public/images/brands/*-logo.png
  */
 export const brands: Brand[] = [
   {
@@ -22,7 +21,7 @@ export const brands: Brand[] = [
     name: "OpenBuilder.ai",
     country: "United States",
     category: "AI Product",
-    logo: "/images/brands/openbuilder.svg",
+    logo: "/images/brands/openbuilder-logo.png",
     website: "https://theopenbuilder.com/",
     featured: true,
   },
@@ -31,7 +30,7 @@ export const brands: Brand[] = [
     name: "Thea Study",
     country: "United States",
     category: "EdTech",
-    logo: "/images/brands/thea-study.svg",
+    logo: "/images/brands/thea-study-logo.png",
     website: "https://play.google.com/store/apps/details?id=study.thea.www.twa",
     featured: true,
   },
@@ -40,7 +39,7 @@ export const brands: Brand[] = [
     name: "Torass Global",
     country: "China",
     category: "Consumer Tech",
-    logo: "/images/brands/torass.svg",
+    logo: "/images/brands/torass-logo.png",
     website: "https://torraslife.com/",
     featured: true,
   },
@@ -49,7 +48,7 @@ export const brands: Brand[] = [
     name: "Kai.ai",
     country: "Switzerland",
     category: "AI",
-    logo: "/images/brands/kai.svg",
+    logo: "/images/brands/kai-logo.png",
     website: "https://kai.ai/",
   },
   {
@@ -57,7 +56,7 @@ export const brands: Brand[] = [
     name: "Audio Read",
     country: "UK",
     category: "Audio / Productivity",
-    logo: "/images/brands/audio-read.svg",
+    logo: "/images/brands/audio-read-logo.png",
     website: "https://audioread.com/",
   },
   {
@@ -65,7 +64,7 @@ export const brands: Brand[] = [
     name: "Binance Dubai",
     country: "UAE",
     category: "Fintech",
-    logo: "/images/brands/binance-dubai.svg",
+    logo: "/images/brands/binance-dubai-logo.png",
     website: "https://www.binance.com/en",
     featured: true,
   },
@@ -74,7 +73,7 @@ export const brands: Brand[] = [
     name: "Durable.ai",
     country: "United States",
     category: "AI",
-    logo: "/images/brands/durable.svg",
+    logo: "/images/brands/durable-logo.png",
     website: "https://durable.ai/",
   },
   {
@@ -82,7 +81,7 @@ export const brands: Brand[] = [
     name: "LINKINK.Ai",
     country: "India",
     category: "AI",
-    logo: "/images/brands/linkink.svg",
+    logo: "/images/brands/linkink-logo.png",
     website: "https://linkink.ai/",
   },
   {
@@ -90,7 +89,7 @@ export const brands: Brand[] = [
     name: "Jeton Banking App",
     country: "Cyprus / UK",
     category: "Fintech",
-    logo: "/images/brands/jeton.svg",
+    logo: "/images/brands/jeton-logo.png",
     website: "https://www.jeton.com/",
     featured: true,
   },
@@ -99,24 +98,15 @@ export const brands: Brand[] = [
     name: "Unsent App",
     country: "Australia",
     category: "Consumer App",
-    logo: "/images/brands/unsent.svg",
+    logo: "/images/brands/unsent-logo.png",
     website: "https://www.unsent.app/",
-  },
-  {
-    id: "mirror-mirror",
-    name: "Mirror Mirror",
-    country: "United States",
-    category: "Consumer App",
-    logo: "/images/brands/mirror-mirror.svg",
-    website: "https://themirrormirrorapp.com/",
   },
   {
     id: "haqq",
     name: "HAQQ Legal AI",
     country: "MENA",
     category: "Legal AI",
-    logo: "/images/brands/haqq.svg",
-    // Official Legal AI product URL not verified separately - editable when confirmed.
+    logo: "/images/brands/haqq-logo.png",
     website: undefined,
   },
 ];

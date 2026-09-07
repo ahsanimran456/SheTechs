@@ -3,7 +3,6 @@
  * by setting NEXT_PUBLIC_GA_ID and extending trackEvent.
  */
 export type AnalyticsEvent =
-  | "media_kit_download"
   | "portfolio_click"
   | "social_click"
   | "contact_submit"

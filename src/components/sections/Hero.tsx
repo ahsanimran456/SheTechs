@@ -1,7 +1,7 @@
 "use client";
 
 import { heroContent } from "@/content/hero";
-import { AnchorButton, MediaKitButton } from "@/components/ui/MediaKitButton";
+import { AnchorButton } from "@/components/ui/AnchorButton";
 import { SafeImage } from "@/components/ui/SafeImage";
 import { HoverSelectText } from "@/components/ui/HoverSelectText";
 import { TiltCard } from "@/components/ui/TiltCard";
@@ -28,7 +28,7 @@ export function Hero() {
           <p className="eyebrow reveal">{introduction}</p>
           <h1
             id="hero-heading"
-            className="display reveal reveal-delay-1 mt-4 max-w-[14ch] text-[clamp(2.35rem,5.4vw,4.35rem)] text-ink"
+            className="display reveal reveal-delay-1 mt-4 max-w-[14ch] text-[clamp(2.15rem,4.8vw,3.85rem)] text-ink"
           >
             {headline}
           </h1>
@@ -47,7 +47,6 @@ export function Hero() {
             >
               {ctas.secondary.label}
             </AnchorButton>
-            <MediaKitButton variant="ghost" source="hero" label="View Media Kit" />
           </div>
 
           <dl className="reveal reveal-delay-3 mt-10 grid gap-4 border-t border-border pt-6 sm:grid-cols-3">
