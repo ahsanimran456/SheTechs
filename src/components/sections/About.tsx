@@ -1,5 +1,6 @@
 import { aboutContent } from "@/content/about";
 import { SafeImage } from "@/components/ui/SafeImage";
+import { HoverSelectText } from "@/components/ui/HoverSelectText";
 
 export function About() {
   const {
@@ -45,7 +46,9 @@ export function About() {
 
             <div className="mt-6 space-y-4 text-[1.05rem] leading-relaxed text-muted">
               {body.map((paragraph) => (
-                <p key={paragraph.slice(0, 32)}>{paragraph}</p>
+                <p key={paragraph.slice(0, 32)}>
+                  <HoverSelectText as="span">{paragraph}</HoverSelectText>
+                </p>
               ))}
             </div>
 
@@ -83,7 +86,7 @@ export function About() {
 
             <div className="mt-10 rounded-[1.75rem] border border-border bg-[linear-gradient(135deg,rgba(31,107,102,0.08),transparent_55%),var(--bg-elevated)] p-7 md:p-8">
               <h3 className="font-[family-name:var(--font-display)] text-2xl tracking-[-0.03em]">
-                {whatIDo.title}
+                <HoverSelectText as="span">{whatIDo.title}</HoverSelectText>
               </h3>
               <ul className="mt-5 space-y-4">
                 {whatIDo.items.map((item) => (
@@ -95,7 +98,7 @@ export function About() {
                       className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-accent"
                       aria-hidden="true"
                     />
-                    {item}
+                    <HoverSelectText as="span">{item}</HoverSelectText>
                   </li>
                 ))}
               </ul>
@@ -104,12 +107,12 @@ export function About() {
             <blockquote className="mt-10 border-l-2 border-accent pl-5">
               <h3 className="eyebrow">{whereImHeaded.title}</h3>
               <p className="mt-3 max-w-2xl text-lg leading-relaxed text-ink/90">
-                {whereImHeaded.copy}
+                <HoverSelectText as="span">{whereImHeaded.copy}</HoverSelectText>
               </p>
             </blockquote>
 
             <p className="mt-10 max-w-xl text-sm italic leading-relaxed text-muted">
-              {personalLine}
+              <HoverSelectText as="span">{personalLine}</HoverSelectText>
             </p>
           </div>
         </div>

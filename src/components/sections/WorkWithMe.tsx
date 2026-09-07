@@ -3,6 +3,7 @@ import { siteConfig } from "@/content/site";
 import { MediaKitButton } from "@/components/ui/MediaKitButton";
 import { SocialLinks } from "@/components/ui/SocialLinks";
 import { ContactForm } from "@/components/sections/ContactForm";
+import { HoverSelectText } from "@/components/ui/HoverSelectText";
 
 export function WorkWithMe() {
   return (
@@ -21,7 +22,7 @@ export function WorkWithMe() {
             {contactContent.title}
           </h2>
           <p className="mt-5 max-w-xl text-[1.05rem] leading-relaxed text-muted">
-            {contactContent.intro}
+            <HoverSelectText as="span">{contactContent.intro}</HoverSelectText>
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">

@@ -1,4 +1,5 @@
 import { brands, caseStudies, type Brand } from "@/content/brands";
+import { HoverSelectText } from "@/components/ui/HoverSelectText";
 
 function BrandLogo({ brand, compact = false }: { brand: Brand; compact?: boolean }) {
   if (brand.logo) {
@@ -78,7 +79,7 @@ function BrandCard({ brand }: { brand: Brand }) {
         href={brand.website}
         target="_blank"
         rel="noopener noreferrer"
-        className="block rounded-[1.25rem] border border-border bg-elevated/70 px-5 py-4 transition hover:-translate-y-0.5 hover:border-accent/40 hover:bg-white"
+        className="block rounded-[1.25rem] border border-border bg-elevated/70 px-5 py-4 transition duration-300 hover:-translate-y-1 hover:border-accent/40 hover:bg-white hover:shadow-[0_16px_40px_rgba(20,24,31,0.08)]"
         aria-label={`${brand.name} - open website`}
       >
         {inner}
@@ -108,8 +109,10 @@ export function Brands() {
             Brands I&apos;ve Worked With
           </h2>
           <p className="mt-4 text-muted">
-            Confirmed technology, AI, and fintech collaborations across regions.
-            Click any brand to open its website.
+            <HoverSelectText as="span">
+              Confirmed technology, AI, and fintech collaborations across
+              regions. Click any brand to open its website.
+            </HoverSelectText>
           </p>
         </div>
       </div>

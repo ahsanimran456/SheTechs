@@ -3,6 +3,7 @@ import { Outfit, Source_Sans_3 } from "next/font/google";
 import { siteConfig } from "@/content/site";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { CursorAura } from "@/components/ui/CursorAura";
 import "./globals.css";
 
 const display = Outfit({
@@ -114,6 +115,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
+        <CursorAura />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
