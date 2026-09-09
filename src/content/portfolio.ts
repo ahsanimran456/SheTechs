@@ -269,13 +269,14 @@ export const portfolioItems: PortfolioItem[] = [
     featured: true,
   },
   {
-    id: "yt-type-value-error",
-    title: "TypeError and ValueError in Python",
-    description: "TypeError vs ValueError explained and fixed in a quick Short.",
+    id: "yt-unicode-error",
+    title: "Unicode error in Python FIXED",
+    description:
+      "Quick Short explaining and fixing UnicodeDecodeError / UnicodeEncodeError in Python.",
     category: "Tech Explainers",
     platform: "YouTube",
-    thumbnail: "https://i.ytimg.com/vi/pVQ6Nbb4W1s/hqdefault.jpg",
-    externalUrl: "https://www.youtube.com/shorts/pVQ6Nbb4W1s",
+    thumbnail: "https://i.ytimg.com/vi/rz3LcAKScn8/hqdefault.jpg",
+    externalUrl: "https://www.youtube.com/shorts/rz3LcAKScn8",
     featured: true,
   },
 ];

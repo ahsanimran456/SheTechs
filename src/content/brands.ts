@@ -109,6 +109,15 @@ export const brands: Brand[] = [
     logo: "/images/brands/haqq-logo.png",
     website: undefined,
   },
+  {
+    id: "mirrormirror",
+    name: "MirrorMirror",
+    country: "United States",
+    category: "Consumer App",
+    logo: "/images/brands/mirror-mirror2222.png",
+    website: "https://www.mirrormirror.com/",
+    featured: true,
+  },
 ];
 
 export type CaseStudy = {

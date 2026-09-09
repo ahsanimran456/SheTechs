@@ -32,7 +32,7 @@ export const reviews = {
       rating: 5.0,
       date: "September 2025",
       text: "MirrorMirror left a 5.0 star review.",
-      logo: "/images/brands/mirror-mirror-logo.png",
+      logo: "/images/brands/mirror-mirror2222.png",
     },
     {
       brand: "Jeton",
