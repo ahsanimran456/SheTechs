@@ -55,10 +55,8 @@ html {
 }
 
 body {
-  background:
-    radial-gradient(1200px 600px at 10% -10%, rgba(31, 107, 102, 0.08), transparent 55%),
-    radial-gradient(900px 500px at 100% 0%, rgba(20, 24, 31, 0.04), transparent 50%),
-    linear-gradient(180deg, #f7f5f1 0%, var(--bg) 35%, #f1eee8 100%);
+  background-color: var(--bg);
+  background-image: none;
   color: var(--ink);
   font-family: var(--font-body), system-ui, sans-serif;
   text-rendering: optimizeLegibility;
@@ -507,6 +505,15 @@ html {
 }
 
 /* Advanced My Work cards */
+.work-filters {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--accent) 35%, transparent) transparent;
+}
+
+.work-filter:active {
+  transform: translateY(0.5px) scale(0.98);
+}
+
 .work-card {
   isolation: isolate;
 }

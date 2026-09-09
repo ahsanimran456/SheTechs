@@ -20,11 +20,6 @@ export function StoryPost() {
       className="section-pad relative overflow-hidden"
       aria-labelledby="story-heading"
     >
-      <div
-        className="pointer-events-none absolute -right-24 top-10 h-80 w-80 rounded-full bg-accent-soft/40 blur-3xl"
-        aria-hidden="true"
-      />
-
       <div className="container-site relative">
         <div className="max-w-2xl">
           <p className="eyebrow">{eyebrow}</p>
@@ -48,12 +43,6 @@ export function StoryPost() {
                 sizes="(max-width: 1024px) 100vw, 55vw"
                 placeholderLabel="Tech creator workspace"
               />
-            </div>
-            <div className="mt-4 flex items-center justify-between gap-3 px-1">
-              <p className="text-xs tracking-[0.12em] text-faint uppercase">
-                Content creation
-              </p>
-              <p className="text-xs text-muted">Consistency · Clarity · Growth</p>
             </div>
           </div>
 

@@ -27,12 +27,6 @@ export function About() {
                 placeholderLabel="Tech workspace image"
               />
             </div>
-            <div className="mt-4 flex items-center justify-between gap-3 px-1">
-              <p className="text-xs tracking-[0.12em] text-faint uppercase">
-                Good tech · Brighter people
-              </p>
-              <p className="text-xs text-muted">AI · Tools · Systems</p>
-            </div>
           </div>
 
           <div>

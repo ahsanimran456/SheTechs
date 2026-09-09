@@ -14,18 +14,9 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative overflow-hidden border-t border-border">
-      <div
-        className="pointer-events-none absolute -left-24 top-0 h-80 w-80 rounded-full bg-accent-soft/50 blur-3xl"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute -right-20 bottom-0 h-72 w-72 rounded-full bg-[rgba(20,24,31,0.05)] blur-3xl"
-        aria-hidden="true"
-      />
-
+    <footer className="relative overflow-hidden border-t border-border/60">
       <div className="container-site relative section-pad !pb-10 !pt-16 md:!pt-20">
-        <div className="overflow-hidden rounded-[2rem] border border-border/80 bg-[linear-gradient(145deg,rgba(31,107,102,0.12),transparent_42%),linear-gradient(180deg,#fffcf8_0%,#f4f1eb_100%)] p-7 shadow-[0_20px_50px_rgba(20,24,31,0.06)] md:p-10">
+        <div className="overflow-hidden rounded-[2rem] border border-border/80 bg-elevated p-7 shadow-[0_20px_50px_rgba(20,24,31,0.06)] md:p-10">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-xl">
               <p className="eyebrow">Next step</p>

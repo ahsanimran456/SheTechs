@@ -122,15 +122,6 @@ export function Brands() {
       className="section-pad relative overflow-hidden"
       aria-labelledby="brands-heading"
     >
-      <div
-        className="pointer-events-none absolute -left-16 top-24 h-72 w-72 rounded-full bg-accent-soft/45 blur-3xl"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute -right-20 top-40 h-64 w-64 rounded-full bg-[rgba(20,24,31,0.05)] blur-3xl"
-        aria-hidden="true"
-      />
-
       <div className="container-site relative">
         <div className="max-w-2xl">
           <p className="eyebrow">Collaborations</p>

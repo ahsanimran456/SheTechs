@@ -13,11 +13,6 @@ export function GrowthJourney() {
       className="section-pad relative overflow-hidden"
       aria-labelledby="growth-heading"
     >
-      <div
-        className="pointer-events-none absolute -left-20 top-24 h-72 w-72 rounded-full bg-accent-soft/40 blur-3xl"
-        aria-hidden="true"
-      />
-
       <div className="container-site relative">
         <div className="grid items-start gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           <div className="space-y-6">
@@ -30,12 +25,6 @@ export function GrowthJourney() {
                   placeholderLabel="Portrait photograph"
                   className="object-cover object-top"
                 />
-              </div>
-              <div className="mt-4 flex items-center justify-between gap-3 px-1">
-                <p className="text-xs tracking-[0.12em] text-faint uppercase">
-                  Dubai · UAE
-                </p>
-                <p className="text-xs text-muted">Tech · AI · Growth</p>
               </div>
             </Reveal>
 

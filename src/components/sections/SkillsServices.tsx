@@ -12,15 +12,6 @@ export function SkillsServices() {
       className="section-pad relative overflow-hidden"
       aria-labelledby="skills-heading"
     >
-      <div
-        className="pointer-events-none absolute -left-20 top-16 h-72 w-72 rounded-full bg-accent-soft/45 blur-3xl"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute -right-16 bottom-10 h-64 w-64 rounded-full bg-[rgba(20,24,31,0.04)] blur-3xl"
-        aria-hidden="true"
-      />
-
       <div className="container-site relative">
         <div className="max-w-2xl">
           <p className="eyebrow">Capabilities</p>

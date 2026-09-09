@@ -28,14 +28,26 @@ export function Reveal({
       return;
     }
 
+    const reveal = () => setVisible(true);
+
+    // Already on screen (e.g. short viewport / tall section) — show immediately.
+    const rect = node.getBoundingClientRect();
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+    if (rect.top < vh - 12 && rect.bottom > 12) {
+      reveal();
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setVisible(true);
+          reveal();
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.14, rootMargin: "0px 0px -8% 0px" },
+      // threshold 0: any visible pixel counts. Tall sections (e.g. My Work)
+      // can never reach a high % threshold on short mobile viewports.
+      { threshold: 0, rootMargin: "0px 0px -12px 0px" },
     );
 
     observer.observe(node);

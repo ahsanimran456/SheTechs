@@ -238,7 +238,7 @@ export function Portfolio() {
         </div>
 
         <div
-          className="mt-8 flex gap-2 overflow-x-auto pb-2"
+          className="work-filters mt-8 flex w-fit max-w-full gap-1.5 overflow-x-auto rounded-[1.35rem] border border-border/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(248,250,249,0.88))] p-1.5 shadow-[0_12px_40px_rgba(20,24,31,0.06)] backdrop-blur-md"
           role="tablist"
           aria-label="Portfolio filters"
         >
@@ -249,10 +249,10 @@ export function Portfolio() {
               role="tab"
               aria-selected={filter === tab}
               className={cn(
-                "shrink-0 rounded-full px-4 py-2 text-sm font-medium transition duration-300",
+                "work-filter shrink-0 rounded-full px-4 py-2.5 text-sm font-semibold tracking-[-0.01em] transition-all duration-300",
                 filter === tab
-                  ? "bg-ink text-[#f8f6f2] shadow-[0_10px_24px_rgba(20,24,31,0.18)]"
-                  : "border border-border bg-elevated/80 text-muted hover:-translate-y-0.5 hover:border-accent/40 hover:text-ink",
+                  ? "bg-[linear-gradient(135deg,var(--accent)_0%,var(--accent-deep)_100%)] text-white shadow-[0_10px_28px_rgba(31,107,102,0.35)] ring-1 ring-white/25"
+                  : "text-muted hover:-translate-y-0.5 hover:bg-accent-soft/70 hover:text-accent-deep",
               )}
               onClick={() => setFilter(tab)}
             >

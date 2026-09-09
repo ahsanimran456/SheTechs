@@ -7,8 +7,8 @@ export const storyContent = {
   title: "The courage to use the talent you already have",
   lead: "I was the student who knew the answer - yet hesitated to speak up. Not because I lacked knowledge, but because I lacked the confidence to share it.",
   image: {
-    src: "/images/story/content-creation-desk.png",
-    alt: "Creator desk with laptop, phone, and notebook - where content gets made",
+    src: "/images/story/ai.jpeg",
+    alt: "Modern AI workspace with laptop analytics, notebook, and phone setup",
   },
   body: [
     "I came from a strong academic background, but professional confidence was something I had to build deliberately.",

@@ -19,11 +19,6 @@ export function WorkWithMe() {
       className="section-pad relative overflow-hidden"
       aria-labelledby="contact-heading"
     >
-      <div
-        className="pointer-events-none absolute right-0 top-10 h-80 w-80 rounded-full bg-accent-soft/40 blur-3xl"
-        aria-hidden="true"
-      />
-
       <div className="container-site relative">
         <div className="mb-12 max-w-2xl">
           <p className="eyebrow">Collaborate</p>
