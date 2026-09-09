@@ -5,17 +5,13 @@ import {
   validateContact,
   type ContactPayload,
 } from "@/lib/validation";
-import { siteConfig } from "@/content/site";
 
 export const runtime = "nodejs";
 
 async function deliverEmail(payload: ContactPayload) {
-  const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.CONTACT_TO_EMAIL || siteConfig.email;
-  const from =
-    process.env.CONTACT_FROM_EMAIL || "Maham Techworld <onboarding@resend.dev>";
+  const accessKey = process.env.WEB3FORMS_ACCESS_KEY;
 
-  if (!apiKey) {
+  if (!accessKey) {
     if (process.env.NODE_ENV === "development") {
       console.info("[contact] Dev mode - message received:", payload);
       return { ok: true as const, mode: "dev-log" as const };
@@ -26,37 +22,43 @@ async function deliverEmail(payload: ContactPayload) {
     };
   }
 
-  const response = await fetch("https://api.resend.com/emails", {
+  const response = await fetch("https://api.web3forms.com/submit", {
     method: "POST",
     headers: {
-      Authorization: `Bearer ${apiKey}`,
       "Content-Type": "application/json",
+      Accept: "application/json",
     },
     body: JSON.stringify({
-      from,
-      to: [to],
-      reply_to: payload.email,
+      access_key: accessKey,
       subject: `New collaboration enquiry from ${payload.name}`,
-      text: [
-        `Name: ${payload.name}`,
-        `Email: ${payload.email}`,
-        `Company: ${payload.company || "-"}`,
-        "",
-        payload.message,
-      ].join("\n"),
+      from_name: "Maham Techworld Website",
+      name: payload.name,
+      email: payload.email,
+      company: payload.company || "-",
+      message: payload.message,
     }),
   });
 
-  if (!response.ok) {
-    const detail = await response.text();
-    console.error("[contact] Resend error:", detail);
+  const detail = await response.text();
+  let parsed: { success?: boolean; message?: string } = {};
+  try {
+    parsed = JSON.parse(detail) as { success?: boolean; message?: string };
+  } catch {
+    // non-JSON body
+  }
+
+  if (!response.ok || parsed.success === false) {
+    console.error("[contact] Web3Forms error:", detail);
     return {
       ok: false as const,
-      message: "Unable to send message right now. Please email directly.",
+      message:
+        process.env.NODE_ENV === "development" && parsed.message
+          ? parsed.message
+          : "Unable to send message right now. Please email directly.",
     };
   }
 
-  return { ok: true as const, mode: "resend" as const };
+  return { ok: true as const, mode: "web3forms" as const };
 }
 
 export async function POST(request: NextRequest) {
@@ -92,7 +94,11 @@ export async function POST(request: NextRequest) {
   const validation = validateContact(clean);
   if (!validation.ok) {
     return NextResponse.json(
-      { ok: false, errors: validation.errors, message: "Please fix the highlighted fields." },
+      {
+        ok: false,
+        errors: validation.errors,
+        message: "Please fix the highlighted fields.",
+      },
       { status: 400 },
     );
   }

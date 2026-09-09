@@ -231,8 +231,9 @@ export function Portfolio() {
           </h2>
           <p className="mt-4 text-muted">
             <HoverSelectText as="span">
-              Selected reels and Shorts on AI, productivity, and everyday tech -
-              created to explain ideas clearly and support brand storytelling.
+              Selected AI educational content, tech explainers, and technology
+              brand campaigns - reels and Shorts built for clarity, UGC-style
+              storytelling, and partnerships that perform.
             </HoverSelectText>
           </p>
         </div>

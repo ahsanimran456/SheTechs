@@ -29,32 +29,62 @@ export function ContactForm() {
     event.preventDefault();
     setServerMessage("");
 
+    // Honeypot - pretend success for bots
+    if (form.website && form.website.trim().length > 0) {
+      setStatus("success");
+      setForm(initial);
+      return;
+    }
+
     const result = validateContact(form);
     setErrors(result.errors);
     if (!result.ok) return;
 
+    const toEmail =
+      process.env.NEXT_PUBLIC_CONTACT_TO_EMAIL || "mahamshakeel546@gmail.com";
+
     setStatus("loading");
 
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
+      // FormSubmit delivers straight to the inbox in the URL (no Resend/Web3Forms key)
+      const response = await fetch(
+        `https://formsubmit.co/ajax/${encodeURIComponent(toEmail)}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            name: form.name.trim(),
+            email: form.email.trim(),
+            company: form.company?.trim() || "-",
+            message: form.message.trim(),
+            _subject: `New collaboration enquiry from ${form.name.trim()}`,
+            _template: "table",
+            _captcha: "false",
+          }),
+        },
+      );
 
       const data = (await response.json()) as {
-        ok?: boolean;
+        success?: string | boolean;
         message?: string;
-        errors?: FieldErrors;
       };
 
-      if (!response.ok || !data.ok) {
-        if (data.errors) setErrors(data.errors);
+      const ok =
+        response.ok &&
+        (data.success === true ||
+          data.success === "true" ||
+          Boolean(data.message?.toLowerCase().includes("success")));
+
+      if (!ok) {
         setStatus("error");
         setServerMessage(
-          data.message ??
+          data.message ||
             "Something went wrong. Please try again or email directly.",
         );
+        trackEvent("contact_submit", { ok: false });
         return;
       }
 

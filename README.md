@@ -44,13 +44,23 @@ Add verified Instagram/YouTube URLs to `portfolio.ts` (`embedUrl` / `externalUrl
 
 ## Contact form
 
-Set environment variables from `.env.example`:
+Uses [FormSubmit](https://formsubmit.co) (free). Submissions go straight to:
 
-- `RESEND_API_KEY` - required in production
-- `CONTACT_TO_EMAIL` - defaults to mahamshakeel546@gmail.com
-- `CONTACT_FROM_EMAIL` - verified Resend sender
+- `NEXT_PUBLIC_CONTACT_TO_EMAIL` (default: `mahamshakeel546@gmail.com`)
 
-In development without a key, submissions are logged server-side.
+**First time:** FormSubmit emails that inbox an activation link — open it once, then every submit lands there.
+
+## SEO
+
+Personal-brand SEO is wired for **Maham Shakeel → AI Engineer → Tech Content Creator → Dubai**:
+
+- Title / description / Open Graph / Twitter cards in `src/app/layout.tsx`
+- Core keywords only (no stuffing) in `src/content/site.ts`
+- JSON-LD: `ProfilePage` + `Person`, `WebSite`, `ProfessionalService`
+- `src/app/sitemap.ts` and `src/app/robots.ts`
+- Natural section copy (About, Work, Brands, Skills, Contact)
+
+Optional next step: an `/insights` blog for long-tail ranking.
 
 ## Deploy
 

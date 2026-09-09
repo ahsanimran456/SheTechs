@@ -1,15 +1,32 @@
 export const siteConfig = {
   name: "Maham Shakeel",
   brand: "Maham Techworld",
-  title: "Maham Shakeel - AI & Tech Content Creator, Dubai",
+  title: "Maham Shakeel — AI Engineer & Tech Content Creator | Dubai",
   description:
-    "Maham Shakeel is an AI engineer and tech content creator based in Dubai. She creates clear, engaging content on AI, automation, and everyday tech - and collaborates with technology and fintech brands.",
+    "Maham Shakeel is an AI Engineer and tech content creator based in Dubai, creating engaging AI, technology and UGC content for global brands.",
   url: "https://mahamshakeel.tech",
   email: "mahamshakeel546@gmail.com",
   location: "Dubai, UAE",
-  positioning: "AI Engineer · Tech Influencer · Tech Content Creator · Dubai, UAE",
+  positioning:
+    "AI Engineer · Tech Content Creator · Tech Influencer · Dubai, UAE",
   logo: "/images/brand/maham-techworld-logo.png",
   ogImage: "/opengraph-image",
+  /** Core SEO targets only — do not expand into keyword stuffing on-page. */
+  keywords: [
+    "Maham Shakeel",
+    "Maham Shakeel Dubai",
+    "AI Content Creator Dubai",
+    "Tech Content Creator Dubai",
+    "AI Engineer Dubai",
+    "Tech Influencer Dubai",
+    "Technology Content Creator Dubai",
+    "AI Tech Influencer Dubai",
+    "AI Creator Dubai",
+    "Tech Creator Dubai",
+    "UGC Creator Dubai",
+    "Fintech Content Creator Dubai",
+    "Maham Techworld",
+  ],
 } as const;
 
 export const navLinks = [

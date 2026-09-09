@@ -133,9 +133,11 @@ export function Brands() {
           </h2>
           <p className="mt-4 text-muted">
             <HoverSelectText as="span">
-              Trusted by technology, AI, and fintech teams across the US, UAE,
-              Europe, and beyond - from product storytelling to long-term
-              campaign partnerships.
+              Maham has collaborated with technology, AI, and fintech brands
+              including OpenBuilder.ai, Thea Study, Torass Global, Binance
+              Dubai, Jeton, and other global technology companies - from product
+              storytelling to long-term campaign partnerships across the US,
+              UAE, Europe, and beyond.
             </HoverSelectText>
           </p>
         </div>

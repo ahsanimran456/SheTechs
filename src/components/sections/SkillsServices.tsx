@@ -23,8 +23,9 @@ export function SkillsServices() {
           </h2>
           <p className="mt-4 text-[1.1rem] leading-relaxed text-muted">
             <HoverSelectText as="span">
-              Technical fluency meets on-camera storytelling - so brands get
-              content that is clear, credible, and built to perform.
+              AI content creation, tech UGC, and brand campaign work - technical
+              fluency meets on-camera storytelling so technology and fintech
+              brands get content that is clear, credible, and built to perform.
             </HoverSelectText>
           </p>
         </div>

@@ -3,18 +3,18 @@ export const skills = [
   "Automation & workflow tools",
   "Chatbot development",
   "Content strategy & scripting",
-  "On-camera hosting & UGC production",
+  "On-camera hosting & tech UGC production",
 ] as const;
 
 export const services = [
-  "UGC content creation",
-  "Brand campaign videos",
-  "AI/tech educational content",
-  "Social media collaborations",
+  "Tech UGC content creation",
+  "AI & technology brand campaigns",
+  "AI educational content",
+  "Fintech & social media collaborations",
 ] as const;
 
 export const contactContent = {
   title: "Work With Me",
   intro:
-    "Interested in collaborating or booking a campaign? Reach out directly using the form below, or email Maham to discuss partnership details.",
+    "Looking for an AI content creator or tech UGC creator in Dubai for your next campaign? Brands collaborate with Maham on AI education, technology storytelling, and fintech content. Reach out using the form below, or email to discuss partnership details.",
 } as const;

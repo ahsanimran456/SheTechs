@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { siteConfig } from "@/content/site";
 
-export const alt = "Maham Shakeel - AI & Tech Content Creator, Dubai";
+export const alt = "Maham Shakeel — AI Engineer & Tech Content Creator | Dubai";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -44,10 +44,10 @@ export default function OpenGraphImage() {
               maxWidth: 900,
             }}
           >
-            Maham Shakeel - AI & Tech Content Creator, Dubai
+            Maham Shakeel — AI Engineer & Tech Content Creator | Dubai
           </div>
           <div style={{ display: "flex", fontSize: 28, color: "#5a616c", maxWidth: 820 }}>
-            Making AI and tech make sense.
+            AI content creator & tech UGC collaborator based in Dubai.
           </div>
         </div>
         <div style={{ display: "flex", fontSize: 24, color: "#164f4b" }}>
